@@ -2,14 +2,23 @@ var ToDo =  {
     options: {
         taskBar: document.getElementById('taskBar'),
         content: document.getElementById('content'),
+        addItem: document.getElementById('addItem'),
         textForP: ''
     },
 
     init: function(){
-        this.createItems();
+        var self = this;
+        this.options.addItem.addEventListener('click', function(){
+            self.options.textForP = self.options.content.value;
+            self.createItems();
+        })
     },
 
     createItems:function(){
+        if(this.options.textForP === ''){
+            alert("You can't add nothing, try to input something!");
+            return
+        } else {
         var item = document.createElement('div');
         item.className = "item";
 
@@ -32,5 +41,6 @@ var ToDo =  {
         item.appendChild(p);
         item.appendChild(del);
         this.options.taskBar.appendChild(item);
+        }
     }
 }
