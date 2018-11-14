@@ -16,16 +16,30 @@
     <main>
         <div class="container">
             <div class="task">
-            <input type="text" name="" id="content">
+            <input type="text" name="" id="content" value="Input what you want to do">
             <button type="submit">Add</button>
             </div>
         </div>
     </main>
     <footer>
         <div class="container">
-        <div class="taskBar"></div>
+        <div id="taskBar">
+            <div class="item">
+                <div class="circle"><img src="img/circle.png" alt=""></div>
+                <p>HELLO
+                    asdsadas
+                    asdasdas                                            
+                </p>
+                <div class="close"><img src="img/delete.png" alt=""></div>
+            </div>
+        </div>
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+        window.onload = function(){
+            ToDo.init();
+        }
+    </script>
 </body>
 </html>
