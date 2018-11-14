@@ -3,6 +3,7 @@ var ToDo =  {
         taskBar: document.getElementById('taskBar'),
         content: document.getElementById('content'),
         addItem: document.getElementById('addItem'),
+        close: document.getElementsByClassName('close'),
         textForP: ''
     },
 
@@ -11,6 +12,13 @@ var ToDo =  {
         this.options.addItem.addEventListener('click', function(){
             self.options.textForP = self.options.content.value;
             self.createItems();
+        })
+        this.options.taskBar.addEventListener('click', function(){
+            close = document.getElementsByClassName('close');
+            if(event.target.parentNode != close[0]){
+                return
+            }
+            self.options.taskBar.removeChild(event.target.parentNode.parentNode)
         })
     },
 
