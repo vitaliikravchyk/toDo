@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: bisque;
+    font-family: 'Inconsolata', monospace;
 }
 .container{
     width: 400px;
@@ -9,7 +11,12 @@ body {
 header {
     display: flex;
     justify-content: center;
-    background-color: aqua;
+    background-color: rgb(178, 226, 233);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.411);
+}
+button {
+    outline: none;
+    cursor: pointer;
 }
 .logo {
     display: flex;
@@ -22,24 +29,27 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    border: 1.5px solid gray;
+    border: 1px solid gray;
     padding: 5px;
+    background-color: gainsboro;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.411);
 }
 #content {
-    width: 100%;
-    padding: 0;
+    width: 95%;
+    padding: 3px;
     border: 0;
-    outline: 1px solid black;
+    outline: 1px solid gray;
     outline-offset: -1px;
     height: 30px;
     font-size: 20px;
+    margin: 0 auto;
 }
-button {
+#addItem {
     width: 20%;
     margin-top: 8px;
 }
 #taskBar {
-    background-color: white;
+    background-color:bisque;
     margin-top: 30px;
 }
 
@@ -47,18 +57,52 @@ button {
     margin: 5px;
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color:white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.411);
 }
 p {
     width: 85%;
     padding: 3px;
     margin: 10px 5px 10px 5px;
-    border: solid 1px aqua;
-    background-color: rgb(197, 197, 197)
+    background-color: gainsboro;
 }
+
+.succsesP {
+    text-decoration: line-through;
+}
+
 .close{
     margin-right: 5px;
+    height: 22px;
+    width: 6%;
+    border-radius: 20px;
+    border: 1px solid rgb(153, 30, 30);
+    background-color: pink;
 }
-.circle {
+.close::after{
+    content: "×";
+    font-weight: bold;
+    color: whitesmoke;
+    font-size: 16px;
+}
+.approve {
     margin-left: 5px;
+    height: 22px;
+    width: 6%;
+    border-radius: 20px;
+    border: 1px solid rgb(21, 150, 21);
+    background-color:rgb(196, 248, 196);
+    padding: 0;
 }
+.approveCircle::before{
+    opacity: 1;
+    content: "✓";
+    font-weight: bold;
+    color: rgb(0, 92, 0);
+    font-size: 16px;
+}
+.approveP {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
